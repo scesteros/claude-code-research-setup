@@ -184,6 +184,15 @@ Released under the [MIT license](LICENSE).
 
 Built and maintained by [Santiago Rodrigo Cesteros](https://scesteros.github.io). If you build on this and would like to share back, issues and pull requests are welcome.
 
-The `prompt-master` skill is vendored from [nidhinjs/prompt-master](https://github.com/nidhinjs/prompt-master) (MIT) — see [`.claude/skills/prompt-master/PROVENANCE.md`](.claude/skills/prompt-master/PROVENANCE.md) for the modification log.
+### Starting points
 
-The `tool-limitations` rule is adapted from [chrisblattman/claudeblattman](https://github.com/chrisblattman/claudeblattman) (MIT).
+This setup did not start from scratch. Two earlier public setups by economists in the community served as the initial scaffolding, before being adapted, extended, and pushed in different directions for the upstream project:
+
+- **[Chris Blattman](https://claudeblattman.com/)** — whose public Claude Code setup was a major reference for how to structure a research-oriented `.claude/` directory. The `tool-limitations` rule here is adapted from [chrisblattman/claudeblattman](https://github.com/chrisblattman/claudeblattman) (MIT).
+- **[Pedro H. C. Sant'Anna](https://psantanna.com/claude-code-my-workflow/workflow-guide.html)** — whose workflow guide shaped the plan-first / verify-after conventions and the framing of the overall loop.
+
+If you are building your own setup from scratch, both are worth reading directly — they explain the *why* behind many of the conventions you will find here.
+
+### Vendored components
+
+The `prompt-master` skill is vendored from [nidhinjs/prompt-master](https://github.com/nidhinjs/prompt-master) (MIT) — see [`.claude/skills/prompt-master/PROVENANCE.md`](.claude/skills/prompt-master/PROVENANCE.md) for the modification log.
