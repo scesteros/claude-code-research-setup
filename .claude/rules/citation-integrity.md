@@ -46,8 +46,8 @@ match an authoritative record returned by **OpenAlex**, **Crossref**,
 
 - **Author list** is the single most-fabricated field. It must be
   copied verbatim from the API response, not typed from memory.
-- A cite key like `Chalfin2022responsetime` does **not** imply the
-  authors are Chalfin et al.; the cite key is just a label. Always
+- A cite key like `Martin2022force` does **not** imply the
+  authors are Martin et al.; the cite key is just a label. Always
   re-derive authors from the API.
 - A real title attached to invented authors is **worse** than a fully
   invented paper, because it is more plausible to a casual reader.
@@ -60,15 +60,15 @@ adjacency is not enough. Failure modes include:
 
 | Failure mode | Example |
 |---|---|
-| `topic_adjacent_only` | Cite a paper on response-time elasticities in US cities for a claim about narco-raid effects on homicides in CABA villas. Both "policing + crime" but different intervention, sample, country, and mechanism. |
-| `direction_mismatch` | Prose says crackdowns reduce violence; paper finds the opposite (e.g., Dell 2015 on PAN crackdowns raising violence in Mexican municipalities). |
+| `topic_adjacent_only` | Cite a paper on response-time elasticities in one setting for a claim about a different intervention's effects on a different outcome in a different setting. Both "policing + crime" but different intervention, sample, country, and mechanism. |
+| `direction_mismatch` | Prose says enforcement crackdowns reduce violence; paper finds the opposite (e.g., a well-known crackdown study showing violence rising in treated municipalities). |
 | `magnitude_mismatch` | Prose says "large reduction"; paper estimates a 1pp effect that the authors themselves frame as modest. |
-| `causal_vs_correlational` | Prose says raids reduce homicides; paper reports a city-year correlation without identification. |
-| `population_or_setting_mismatch` | Claim is about Buenos Aires informal settlements; paper studies rural Colombian coca farms. |
-| `time_period_mismatch` | Claim is about post-2018 CABA; paper's data ends in 2005. |
-| `out_of_scope_inference` | Claim extrapolates beyond what the paper warrants (e.g., using Goldstein 1985's tripartite framework as evidence for a specific homicide reduction). |
+| `causal_vs_correlational` | Prose says the intervention reduces the outcome; paper reports a city-year correlation without identification. |
+| `population_or_setting_mismatch` | Claim is about urban treated neighborhoods; paper studies rural agricultural producers. |
+| `time_period_mismatch` | Claim is about post-2018 in the study city; paper's data ends in 2005. |
+| `out_of_scope_inference` | Claim extrapolates beyond what the paper warrants (e.g., using a foundational theoretical framework as evidence for a specific outcome reduction). |
 | `mis_attribution` | The finding exists in the literature but is from a different paper than the one cited. |
-| `review_used_for_specific_finding` | Chalfin & McCrary 2017 (a survey) cited for a specific elasticity it summarizes but does not itself establish. Cite the primary paper. |
+| `review_used_for_specific_finding` | A well-known survey cited for a specific elasticity it summarizes but does not itself establish. Cite the primary paper. |
 
 ### Layer 3 — Internal consistency
 
@@ -139,7 +139,7 @@ two-pass novelty protocol.
 - One cite key → exactly one paper, consistently across all `.tex`
   files in the paper draft.
 - If two papers have the same first author and year, distinguish keys
-  (`Levitt1997a`, `Levitt1997b`) rather than collapsing.
+  (`Garcia2005a`, `Garcia2005b`) rather than collapsing.
 - The same paper must not appear under different keys.
 
 ---
@@ -222,11 +222,10 @@ ignored.
 
 ## Why this rule exists
 
-A paper draft that asserts causal effects of police raids on homicide
-in CABA villas only has value if the literature citations are
-trustworthy. Crime / drug-violence econometrics has well-known cite
-hazards: red-flag canonicals (Becker 1968, Goldstein 1985, Levitt
-1997, Dell 2015, Chalfin & McCrary 2017) get reflexively cited for
+A paper draft that asserts causal effects in a specific empirical
+setting only has value if the literature citations are trustworthy.
+Most applied-econ subliteratures have well-known cite hazards: a few
+canonical / foundational papers get reflexively cited for
 mechanism-specific claims they do not actually make. The dormant
 toolkit installed here is the structural defense; when the paper
 draft begins, invoking `/audit-citations paper/` produces a

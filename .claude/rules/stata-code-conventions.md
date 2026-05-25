@@ -38,7 +38,7 @@ set scheme s1color
 
 ## 3. Path Management
 
-- All paths use globals defined in `0_CABA_Master.do`
+- All paths use globals defined in `0_Master.do`
 - **Never** use hardcoded absolute paths in analysis files
 - Standard globals: `$path`, `$data`, `$do`, `$data_dir`, `$output`, `$events`
 - Reference files as: `"$data_dir/filename.dta"`, `"$output/figures/filename.png"`

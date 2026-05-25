@@ -35,7 +35,7 @@ For each dimension, ask: "Is there a defensible reading under which the paper do
 
 - **direction:** Does the paper's central result actually point in the direction the claim asserts, or is the inference downstream of an interpretation the authors themselves hedge? (E.g., a DiD coefficient that is borderline-significant being read as "policing reduces crime".)
 - **magnitude:** Is the claim's qualifier ("large", "pronounced", "well-documented") consistent with the paper's *estimated* magnitude, or is the qualifier reading inflated? (A 2pp effect being framed as "substantial".)
-- **population:** Is the population in the paper actually the population in the claim, or is one a strict subset / loose generalization of the other? (Paper studies US cities; claim is about informal settlements in Latin America.)
+- **population:** Is the population in the paper actually the population in the claim, or is one a strict subset / loose generalization of the other? (Paper studies one country / one cohort; claim generalises to a different region or population.)
 - **setting:** Country, sector, time period — is the paper's setting close enough that a reader would not have to assume transportability?
 - **mechanism:** Is the channel the claim invokes actually the channel the paper demonstrates, or is the claim's channel one of several the paper discusses (with the paper agnostic among them)? (Paper documents a deterrence effect; claim invokes an incapacitation channel.)
 - **evidence_type:** If the claim implies causality, does the paper have a credible identification strategy for *this specific outcome*, or is the causal evidence on a different outcome?
@@ -80,6 +80,6 @@ IF CONFIRM:
 
 ## When you are invoked
 
-`/audit-citations --adversarial` runs you on every VALID cite in the target paper subdirectory (e.g., `paper/`). `verify-citations` may invoke you when a writer adds a high-stakes cite (novelty claim, contested mechanism, headline result). The user may also invoke you manually on a specific (bibkey, location) pair when they want a second opinion — particularly useful for the canonical crime-economics cites (Becker 1968, Levitt 1997, Chalfin & McCrary 2017) that are often cited reflexively for mechanism-specific claims they do not actually make.
+`/audit-citations --adversarial` runs you on every VALID cite in the target paper subdirectory (e.g., `paper/`). `verify-citations` may invoke you when a writer adds a high-stakes cite (novelty claim, contested mechanism, headline result). The user may also invoke you manually on a specific (bibkey, location) pair when they want a second opinion — particularly useful for canonical / foundational cites in the field that are often cited reflexively for mechanism-specific claims they do not actually make.
 
 You are deliberately expensive (a second fresh-context read of the same paper). The user pays this cost only when the verdict is load-bearing. Match that posture: thorough, independent, willing to disagree.

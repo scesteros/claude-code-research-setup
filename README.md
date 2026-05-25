@@ -2,7 +2,7 @@
 
 A working [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) configuration for empirical economics research — the agents, skills, hooks, and rules I use every day.
 
-This is the lightly-genericized, ready-to-fork version of the setup I run across my active research projects. The most-developed working example is [`narcos-ba`](https://github.com/scesteros) — a study of anti-narcotics police raids and crime in Buenos Aires informal settlements — so most of the concrete examples below are drawn from it. Drop the `.claude/` directory into your own repo, adapt the placeholders, and you have an opinionated starting point — instead of a blank `.claude/` slate.
+This is the lightly-genericized, ready-to-fork version of the setup I run across my active research projects. Drop the `.claude/` directory into your own repo, adapt the placeholders, and you have an opinionated starting point — instead of a blank `.claude/` slate.
 
 > **Use as a template:** click **"Use this template"** above to spin up your own copy without forking. Adapt to your project (paths, conventions, examples) and commit forward.
 
@@ -160,13 +160,7 @@ The setup is opinionated in a few ways worth flagging upfront:
 
 ## About the examples
 
-Many rules, skills, and agents contain concrete illustrative examples drawn from the running example project — a study of anti-narcotics police raids and crime in informal settlements (*villas*) in Buenos Aires, using event-study DiD on a scraped panel of raid events. You will see references to *villas*, *raids*, *CABA agencies*, *staggered DiD*, etc.
-
-These are intentionally preserved as templates rather than rewritten into sterile placeholders. They show what good rules, fact-audit logs, and review prompts look like applied to a real research project — concrete enough to learn from. Adapt them to your own context: replace the substantive examples with your own treatments, units, and institutional setting.
-
-If you'd prefer fully sanitized versions, the substitution patterns to look for are:
-- `villas`, `raids`, `CABA`, `Buenos Aires`, `SEDRONAR`, etc. → your own substantive examples
-- `<pipeline-output-path>/`, `<pipeline-source-path>/` → your real data paths
+Many rules, skills, and agents contain concrete examples drawn from a real research project rather than sterile placeholders. They show what good rules, audit logs, and review prompts look like in practice — concrete enough to learn from. When you fork, you will find domain-specific terms scattered through the files (substantive concepts, unit names, agency acronyms, data-path placeholders like `<pipeline-output-path>/`). Replace them with your own as you adapt.
 
 ---
 

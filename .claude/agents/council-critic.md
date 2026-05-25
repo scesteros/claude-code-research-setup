@@ -107,7 +107,7 @@ That is the entire output. No preamble. No closing remarks.
 TARGET: H1
 PERSONA: Identification
 SCORE: 2
-RATIONALE: Stacked event-study DiD with only 7 treated villas and ~50 episodes is identified, but the standard cluster-robust SE will over-reject; the plan mentions wild-cluster bootstrap as a "robustness" but it should be the headline inference given the few-treated-clusters regime.
+RATIONALE: Stacked event-study DiD with only 7 treated units and ~50 episodes is identified, but the standard cluster-robust SE will over-reject; the plan mentions wild-cluster bootstrap as a "robustness" but it should be the headline inference given the few-treated-clusters regime.
 BLOCKING: WCB / randomization inference should be the headline inference, not a robustness check.
 ```
 
@@ -117,7 +117,7 @@ BLOCKING: WCB / randomization inference should be the headline inference, not a 
 TARGET: §4.B-para1
 PERSONA: Hostile Referee
 SCORE: 3
-RATIONALE: The "no causal study in any Argentine city" claim survives the narrower-form carve-out (anti-narcotics raids), but a hostile referee can still point to Di Tella & Schargrodsky (2004) as Argentine causal-policing precedent and ask why the broader hedge is necessary at all — consider tightening the framing further.
+RATIONALE: The "no causal study in any city of the country" claim survives the narrower-form carve-out (the specific intervention type), but a hostile referee can still point to Garcia & Lopez (2012) as in-country causal-policing precedent and ask why the broader hedge is necessary at all — consider tightening the framing further.
 BLOCKING: none
 ```
 
@@ -127,8 +127,8 @@ BLOCKING: none
 TARGET: option-A
 PERSONA: Practitioner Cost
 SCORE: 2
-RATIONALE: The 911 emergency-call panel depends on a FOIA-type request to CABA Ministerio de Seguridad with no historical precedent in solicitudes_información/; estimated response time is 6+ months and refusal is plausible, putting the spillover-extension critical path at risk.
-BLOCKING: Have a Plan B that does not depend on the 911 panel before committing the chapter to that extension.
+RATIONALE: The dispatch panel depends on a FOIA-type request to the ministry of security with no historical precedent in information_requests/; estimated response time is 6+ months and refusal is plausible, putting the spillover-extension critical path at risk.
+BLOCKING: Have a Plan B that does not depend on the dispatch panel before committing the chapter to that extension.
 ```
 
 ## Hard rules (recap)

@@ -16,7 +16,7 @@ The table flags categories where Claude is reliably the wrong tool, with the sug
 |---|---|---|
 | **Stata execution** | Edit-only by repo convention; Claude does not run Stata. | User runs the `.do` manually after Claude emits it. |
 | **xelatex / pdflatex execution** | Edit-only by repo convention; Claude does not compile LaTeX in this repo. | User compiles manually with the command Claude prints. |
-| **Python scrapers (`<pipeline-source-path>/`)** | Edit-only by convention; the user runs the scraper inside the project's venv. | User runs `python scraper_caba_*.py` after activating `.venv/Scripts/activate`. |
+| **Python scrapers (`<pipeline-source-path>/`)** | Edit-only by convention; the user runs the scraper inside the project's venv. | User runs `python scraper_*.py` after activating `.venv/Scripts/activate`. |
 | **Heavy `.dta` introspection (large Stata binary)** | Claude cannot reliably parse Stata binary; results may be wrong. | Open in Stata; or export to CSV first and have Claude read that. |
 | **Spreadsheet manipulation (XLSX with formulas, pivots, complex formatting)** | Claude can read CSV; cannot reliably edit XLSX formulas or formats. | Stay in Excel / Sheets; or use Gemini for spreadsheet-native work. |
 | **Video / audio files** | Claude cannot process video or audio directly. | Use Gemini for media analysis; or work from transcripts (which Claude can analyse). |

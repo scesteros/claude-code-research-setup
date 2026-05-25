@@ -103,7 +103,7 @@ The single source of truth is the per-paper-subdir audit log
 comments or agent transcripts are ignored.
 
 The non-citation factual claims (numbers from the analysis pipeline,
-institutional facts about villas / agencies / CABA, dates) are tracked
+institutional facts about treated areas / agencies / jurisdictions, dates) are tracked
 in a complementary `.fact-audit.md` sidecar — see
 [`fact-audit-log.md`](fact-audit-log.md). DRIFT / STALE verdicts on
 those facts are treated as MAJOR by default and surfaced in the audit

@@ -15,7 +15,7 @@ For each modified file, verify correctness through static analysis (since Claude
 
 ### For `.do` files (Stata):
 1. **Syntax scan:** Check for unmatched quotes, parentheses, braces
-2. **Global references:** Verify all `$global_name` references exist in `0_CABA_Master.do`
+2. **Global references:** Verify all `$global_name` references exist in `0_Master.do`
 3. **File references:** Check that `use` and `merge using` files are plausible paths
 4. **Package dependencies:** Verify required packages are in `install_packages` block
 5. **Output paths:** Check `$output/` subdirectories match project structure
@@ -33,7 +33,7 @@ For each modified file, verify correctness through static analysis (since Claude
 3. **Format check:** Figures are .png/.pdf, tables are .tex/.csv
 
 ### For cross-file consistency:
-1. **Master file alignment:** Do files in `0_CABA_Master.do` `include` statements match actual filenames?
+1. **Master file alignment:** Do files in `0_Master.do` `include` statements match actual filenames?
 2. **Pipeline order:** Are data dependencies satisfied (files created before used)?
 
 ## Report Format

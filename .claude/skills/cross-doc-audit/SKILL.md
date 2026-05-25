@@ -40,8 +40,8 @@ If only one document is provided, ask the user to specify the other(s).
 Group substantive claims into these dimensions:
 
 1. **Numerical facts** — point estimates, standard errors, sample sizes, percentages, dates, magnitudes, counts.
-2. **Named entities** — paper citations, organizations (PFA, Policía de la Ciudad, SEDRONAR), locations (barrios, comunas, villas), co-authors, dataset names.
-3. **Terminology** — technical terms and framings ("raid" vs. "operativo"; "treated villa" vs. "raided settlement"; "stacked DiD" vs. "Cengiz et al. estimator").
+2. **Named entities** — paper citations, organizations (the federal police, the city police, the partner agency), locations (neighborhoods, districts, treated areas), co-authors, dataset names.
+3. **Terminology** — technical terms and framings ("intervention event" vs. "operation"; "treated unit" vs. "intervention site"; "stacked DiD" vs. "Cengiz et al. estimator").
 4. **Structural claims** — descriptions of study design, identification, outcomes, event window, clustering, treatment definition.
 5. **Authorship and attribution** — who authored what, who is co-author on which project, who is supervisor.
 6. **Asymmetric inclusion** — a substantive fact mentioned in one document but conspicuously absent from the corresponding section in another.
@@ -65,9 +65,9 @@ This is most efficient when the user has named a focus dimension; otherwise enum
 
 Claims that refer to the same underlying fact are clustered together, regardless of phrasing. E.g.:
 
-- "Homicides fall by 11.8% post-raid" (paper) and "$-0.118$ log points" (CSV cell `main_did_daily.csv` row `treated`) and "−12% effect on homicides" (slide) → same cluster. Three rounding precisions and two unit framings — flag for alignment.
-- "Treatment defined as any narco raid in barrio in 30-day window" (paper §3.1) and "30-day post-event treatment indicator" (slide §Methodology) → same cluster.
-- "Clustered at barrio level" (paper) and "Clustered at comuna level" (slide) → same cluster, STRUCTURAL_CONFLICT.
+- "Outcome falls by 11.8% post-intervention" (paper) and "$-0.118$ log points" (CSV cell `main_did_daily.csv` row `treated`) and "−12% effect on outcome" (slide) → same cluster. Three rounding precisions and two unit framings — flag for alignment.
+- "Treatment defined as any intervention event in neighborhood in 30-day window" (paper §3.1) and "30-day post-event treatment indicator" (slide §Methodology) → same cluster.
+- "Clustered at neighborhood level" (paper) and "Clustered at district level" (slide) → same cluster, STRUCTURAL_CONFLICT.
 
 ### 4. Issue a verdict per cluster
 
@@ -75,7 +75,7 @@ Claims that refer to the same underlying fact are clustered together, regardless
 - **NUMERICAL_MISMATCH** — same fact, different numbers (or different precision, different units).
 - **TERMINOLOGY_DRIFT** — same concept, different terms used inconsistently across documents (e.g., one doc updated, the other not).
 - **FRAMING_DIVERGENCE** — same fact, framed at different scopes or precision. May be intentional or accidental.
-- **STRUCTURAL_CONFLICT** — same design feature described differently in two documents (e.g., one says clustering at barrio level, another says comuna level).
+- **STRUCTURAL_CONFLICT** — same design feature described differently in two documents (e.g., one says clustering at neighborhood level, another says district level).
 - **MISSING_FROM_DOC** — a substantive fact present in one document is conspicuously absent from the parallel section of another, where the user might expect it to appear.
 
 ### 5. Delegate per-cluster verification to the agent when warranted
@@ -98,8 +98,8 @@ Claim clusters audited: N
   MISSING_FROM_DOC:           n
 
 ── NUMERICAL_MISMATCH ──
-1. Main DiD coefficient on daily homicides:
-   - paper/paper.tex:204: "homicides fall by 11.8% (SE 3.1)"
+1. Main DiD coefficient on the daily outcome:
+   - paper/paper.tex:204: "outcome falls by 11.8% (SE 3.1)"
    - presentation/main.tex:88: "−12% effect (SE 3.1)"
    - output/tables/main_did_daily.csv:row=treated: "-0.1184, SE 0.0312"
    Issue: paper rounds to 11.8%; slide rounds to 12%; CSV is in log points (-0.118).
@@ -139,7 +139,7 @@ For each non-CONSISTENT cluster, the user decides: align to one version, accept 
 | Pair | Watch for |
 |---|---|
 | Paper draft + slide deck | Numerical drift on main effects, terminology drift after one document is updated, missing first-stage results on slides, hedge consistency |
-| Paper body + table captions | Caption text restating a coefficient differently from the body; "treated" vs. "raided" inconsistency |
+| Paper body + table captions | Caption text restating a coefficient differently from the body; "treated" vs. "intervention" inconsistency |
 | Paper draft + Stata-output CSV | Sign / unit / magnitude drift; specification mismatch (daily vs. monthly); the prose must align to the CSV, not vice versa |
 | Paper + meeting notes | Old framings carried over; coefficient quoted in a meeting before a later re-run was incorporated |
 | Slide deck + table captions | Reformatted table that drops standard errors; abbreviated terminology on slide that disagrees with the caption |

@@ -66,10 +66,10 @@ If the target has no natural items (one continuous prose block), treat the whole
 ```
 TARGET ITEMS
 
-1. H1 — Network disruption (raids dismantle the trafficking organization)
-2. H2 — Drug-market externality (sale-point removal cuts acquisitive crime)
-3. H3 — Institutional collapse (vacuum raises violence)
-4. Design — Stacked event-study DiD on villa-date panel
+1. H1 — Primary mechanism (the intervention directly disrupts the system)
+2. H2 — Externality mechanism (the intervention generates spillovers reducing the outcome)
+3. H3 — Counter-effect mechanism (the intervention creates conditions that raise the outcome)
+4. Design — Stacked event-study DiD on unit-date panel
 5. Spec — Three contamination-handling specifications side by side
 
 Dispatching council across these 5 items.

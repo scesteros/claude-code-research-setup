@@ -28,9 +28,9 @@ A cite is shippable only when Layer 1 = `BIB_OK` (or explicitly-overridden `BIB_
 
 ## What "substantive verification" means
 
-> *Bibliographic verification* asks: is "Chalfin & McCrary (2017)" the correct author/year/title for bibkey `ChalfinMcCrary2017`?
+> *Bibliographic verification* asks: is "Martin & Roberts (2018)" the correct author/year/title for bibkey `MartinRoberts2018`?
 >
-> *Substantive verification* asks: does Chalfin & McCrary (2017) actually report findings that support the specific claim in this sentence?
+> *Substantive verification* asks: does Martin & Roberts (2018) actually report findings that support the specific claim in this sentence?
 
 This skill is about **both** questions, but the second is the load-bearing one and gets the harder check.
 
@@ -40,13 +40,13 @@ A citation is **MISMATCH** if the paper is on the broad topic but does not suppo
 
 | Failure mode | Example |
 |---|---|
-| **Topic-adjacent only** | Sentence: "Police raids reduce homicides in informal settlements." Cite: a paper on response-time elasticities in US cities. The paper is "about policing and crime" but does not study raids, informal settlements, or supply-disruption effects. |
+| **Topic-adjacent only** | Sentence: "The intervention reduces the outcome in treated neighborhoods." Cite: a paper on response-time elasticities in a different setting. The paper is "about policing and crime" but does not study the specific intervention, treated neighborhoods, or supply-disruption effects. |
 | **Direction mismatch** | Prose claims an increase in violence after a crackdown; paper finds a decrease (or null). |
 | **Magnitude mismatch** | Prose says "large reduction"; paper estimates a 2pp effect that the authors themselves frame as modest. |
-| **Causal vs. correlational mismatch** | Prose says "raids reduce homicides"; paper reports a city-year correlation without identification. |
-| **Population / setting mismatch** | Claim is about Buenos Aires informal settlements; paper studies Rio de Janeiro favelas with a different state-presence regime. Claim is about urban; paper is rural. |
+| **Causal vs. correlational mismatch** | Prose says "the intervention reduces the outcome"; paper reports a city-year correlation without identification. |
+| **Population / setting mismatch** | Claim is about treated neighborhoods in the study city; paper studies a different country / region with a different state-presence regime. Claim is about urban; paper is rural. |
 | **Time-period mismatch** | Claim references the post-2018 crackdown era; paper's data ends in 2010. |
-| **Out-of-scope inference** | Paper studies displacement of drug markets in setting S; prose extrapolates to a homicide-deterrence mechanism the paper does not test. |
+| **Out-of-scope inference** | Paper studies displacement of the regulated activity in setting S; prose extrapolates to an outcome-deterrence mechanism the paper does not test. |
 | **Mis-attribution within the literature** | The finding *exists* in the literature, but is from a *different* paper than the one cited. |
 | **Review / meta-analysis used for a specific finding** | A literature review is cited for a specific quantitative finding the review itself does not establish (it only summarizes others). Cite the primary source instead. |
 
@@ -68,17 +68,14 @@ This step is non-negotiable for new cites. For audit/batch mode, this same finge
 
 ### Red-flag canonical citations
 
-A specific failure pattern: foundational/canonical papers get cited reflexively for **specific mechanism claims** they don't actually make. The paper is so general it *seems* to fit almost any sentence in its broad topic. Examples especially relevant to crime / policing / drug-market work:
+A specific failure pattern: foundational/canonical papers in your field get cited reflexively for **specific mechanism claims** they don't actually make. The paper is so general it *seems* to fit almost any sentence in its broad topic. Common categories to watch for:
 
-- **Becker (1968)** — foundational individual-deterrence model. Routinely misused for network-disruption or supply-side-disruption claims it does not theorize.
-- **Becker & Murphy (1988) rational addiction** — consumer-demand theory. Routinely misused for crime / supply-disruption claims it does not establish.
-- **Becker, Murphy & Grossman (2006)** — illegal-goods market theory. Frequently miscited for "enforcement lowers violence" when the paper's implication runs the opposite direction (enforcement can raise violence through market disruption).
-- **Goldstein (1985) tripartite framework** — concept-defining paper for drug/violence channels (psychopharmacological, economic-compulsive, systemic). Valid when cited *for the channel concept*; not valid when cited as evidence for a specific policy intervention (e.g., raids reducing crime).
-- **Levitt (1997)** — police-on-crime causal effect via electoral cycles. Routinely overcited for "police reduce crime" claims; the specific IV and population matter (US cities, mayoral cycles), and McCrary 2002's critique of the IV should be acknowledged when invoking Levitt for a contested claim.
-- **Chalfin & McCrary (2017)** — review of police-on-crime evidence. Routinely cited as if it provides a specific number for the elasticity; it is a survey, so cite the primary papers for specific magnitudes.
-- **Dell (2015)** — trafficking-related violence in Mexico. Heavily-cited but specific to Mexican municipalities, PAN electoral cycles, and the 2007–2010 window — transportability to Argentina or to 2020s settings is not automatic.
+- **Foundational theoretical models.** A classic theory paper that introduces a general framework — routinely misused for narrow empirical claims the original paper does not theorize about. Valid when cited *for the framework concept*; not valid as evidence for a specific empirical effect.
+- **Canonical empirical papers in a sub-literature.** A heavily-cited identification study (well-known IV, RDD, or DiD design) — routinely overcited for "X causes Y" claims; the specific identification strategy and population matter, and any well-known critique of the design should be acknowledged when invoking the paper for a contested claim.
+- **Reviews and meta-analyses.** Surveys are routinely cited as if they provide a specific number; reviews summarize others' work — cite the primary papers for specific magnitudes.
+- **Out-of-setting canonical results.** A famous result from one country / era / sector — transportability to a different setting is not automatic. Heavily-cited papers from one context become reflexive cites in unrelated contexts.
 
-**Rule for red-flag canonicals.** When proposing any of these for a mechanism-specific claim, the verification bar is higher: the cite must show that the *specific* mechanism is in the paper, not just that the paper is in the broad topic. Hedging language ("the broader Becker (1968) framework suggests...") is acceptable only when verified that the framework does in fact support the specific implication.
+**Rule for red-flag canonicals.** When proposing any heavily-cited paper for a mechanism-specific claim, the verification bar is higher: the cite must show that the *specific* mechanism is in the paper, not just that the paper is in the broad topic. Hedging language ("the broader framework suggests...") is acceptable only when verified that the framework does in fact support the specific implication.
 
 This list is not exhaustive. Any heavily-cited "foundational" paper deserves heightened scrutiny when paired with a narrow mechanism claim.
 
@@ -154,7 +151,7 @@ If you find drift, flag it to the user as **BIB-DRIFT** in addition to whatever 
 
 If the bib has no DOI at all, record `bib_check = BIB_NO_DOI` and recommend the user add one. The substantive check still proceeds.
 
-This catches the case where the bibkey *looks* right (`Becker1968`) but the underlying entry is malformed (wrong title, wrong journal, etc.), which the substantive check alone would miss.
+This catches the case where the bibkey *looks* right (e.g., `FamousAuthor1968`) but the underlying entry is malformed (wrong title, wrong journal, etc.), which the substantive check alone would miss.
 
 ### Step 4 — Obtain and read the paper
 

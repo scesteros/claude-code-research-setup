@@ -17,8 +17,8 @@ In this project, "source documents" routinely include — beyond academic PDFs:
 - **CSV pipeline outputs** under `output/tables/` (e.g., regression coefficient tables exported via `esttab`).
 - **`.do` file headers and inline comments** that document a data construction step, a sample restriction, or a variable definition.
 - **Working paper PDFs** in `literature/methods/` or `literature/topic/`.
-- **Information request responses** under `solicitudes_información/` (e.g., FOIA-type returns from CABA agencies).
-- **Codebook entries** from CABA open data portals or other administrative sources.
+- **Information request responses** under `information_requests/` (e.g., FOIA-type returns from public agencies).
+- **Codebook entries** from open data portals or other administrative sources.
 
 When the orchestrator invokes you with a "source" pointing to a `.log` or `.csv`, **read it as a primary source**. The Stata pipeline output is the authoritative value for any number the paper draft asserts about the analysis (sample sizes, point estimates, standard errors, F-stats, observation counts). Don't dismiss it as "intermediate".
 
@@ -49,7 +49,7 @@ If no relevant passage can be located after a reasonable search, return **UNSOUR
 Check each dimension explicitly:
 
 - **Number / magnitude:** do the digits match? Units? Level of aggregation? (Stata reports coefficients in the model's units — `log(homicides)` vs. raw counts vs. percent changes.)
-- **Population / setting:** same sample, time period, unit of observation? (Daily vs. monthly panel; barrios vs. comunas; pre- vs. post-2018.)
+- **Population / setting:** same sample, time period, unit of observation? (Daily vs. monthly panel; neighborhoods vs. districts; pre- vs. post-policy-change.)
 - **Direction / sign:** consistent with the source?
 - **Precision:** does the claim add quantifiers, comparators, or specificity not in the source?
 - **Attribution:** is the claim properly attributed to the source (in the prose), or is it stated as the writer's own finding?

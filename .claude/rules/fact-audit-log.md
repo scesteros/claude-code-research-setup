@@ -33,20 +33,20 @@ Any time the prose asserts:
 - A **number from the analysis pipeline** — point estimate, standard
   error, sample size, F-statistic, percentage change, observation
   count.
-- A **number from the scraping/cleaning pipeline** — raid count, villa
-  count, panel coverage period, share of barrios with ≥1 event.
-- An **institutional fact** — what CABA agency does what, which
-  jurisdiction covers which villa, what a decree provides, what a
+- A **number from the scraping/cleaning pipeline** — event count, unit
+  count, panel coverage period, share of neighborhoods with ≥1 event.
+- An **institutional fact** — what partner agency does what, which
+  jurisdiction covers which treated unit, what a decree provides, what a
   FOIA-type return contained.
 - A **descriptive characterization** about a setting or population
-  that is not common knowledge (villas-vs-formal-barrios definitional
-  criteria, narco-raid operational definitions, etc.).
-- A **trend** or **comparison** ("homicides peaked in 2018", "raids
+  that is not common knowledge (treated-vs-control definitional
+  criteria, intervention-event operational definitions, etc.).
+- A **trend** or **comparison** ("the outcome peaked in 2018", "events
   intensified post-2019").
 
-If the claim is **common knowledge** (Argentina is in South America;
-CABA is a federal district) no logging is needed. If a reader could
-ask "where does that number come from?", log it.
+If the claim is **common knowledge** (the study country is in a given
+region; the study city is a federal district) no logging is needed. If
+a reader could ask "where does that number come from?", log it.
 
 ## File location
 
@@ -75,7 +75,7 @@ Last updated: <YYYY-MM-DD>
 |---|---|
 | `claim_fingerprint` | Short paraphrase (≤20 words) of the factual claim. |
 | `location` | `file:line` where the claim appears in prose. |
-| `primary_source` | The authoritative source: a path under `output/` for pipeline outputs (preferred — see examples), a URL to an official document, a CABA government decree, or a dataset codebook reference. |
+| `primary_source` | The authoritative source: a path under `output/` for pipeline outputs (preferred — see examples), a URL to an official document, a government decree, or a dataset codebook reference. |
 | `source_value` | The verbatim value the source reports (with units). |
 | `doc_value` | The value the prose currently asserts (with units). |
 | `verdict` | `VERIFIED` (doc_value matches source_value, modulo stated rounding), `DRIFT` (doc_value is materially different from source_value), `UNSOURCED` (no primary source located), or `STALE` (source has been updated; doc may need refresh — common after a pipeline re-run). |
@@ -91,25 +91,25 @@ below — emphasize this project's pipeline outputs:
   standard error, N, or F-stat must trace to a `.csv` row in
   `output/tables/` or a regression block in `output/logs/`. This is
   the **single most common case** in this project.
-- **Scraping pipeline output.** A raid count or event-window summary
+- **Scraping pipeline output.** An event count or event-window summary
   must trace to a `.csv` under `<pipeline-output-path>/` or
   the cleaned panel.
-- **CABA government source document.** Statute, decree, official
-  villa boundary map, agency mission statement.
-- **External administrative source.** SEDRONAR reports, INDEC
-  statistics, Ministry of Security publications.
-- **FOIA-type return.** A document under `solicitudes_información/`
+- **Government source document.** Statute, decree, official
+  treated-area boundary map, agency mission statement.
+- **External administrative source.** Partner-agency reports, national
+  statistics, ministry-of-security publications.
+- **FOIA-type return.** A document under `information_requests/`
   with a clear date and agency name.
 
 ### Example rows (crime-econometrics flavor)
 
 ```markdown
-| Main DiD coefficient: raids reduce daily homicides by 11.8% | paper/sections/04_results.tex:42 | this project pipeline output (output/tables/main_did_daily.csv, treated row, col=2, v2026-04) | -0.1184 (log points) | 11.8% (rounded) | VERIFIED | 2026-05-13 | User: paper reports the percent transformation; CSV reports log points; both consistent. |
+| Main DiD coefficient: the intervention reduces the daily outcome by 11.8% | paper/sections/04_results.tex:42 | this project pipeline output (output/tables/main_did_daily.csv, treated row, col=2, v2026-04) | -0.1184 (log points) | 11.8% (rounded) | VERIFIED | 2026-05-13 | User: paper reports the percent transformation; CSV reports log points; both consistent. |
 | Standard error on main DiD: 3.1pp | paper/sections/04_results.tex:43 | this project pipeline output (output/tables/main_did_daily.csv, treated row, SE col) | 0.0312 (log SE) | 3.1pp | VERIFIED | 2026-05-13 |  |
-| Sample period 2016–2024 | paper/sections/03_data.tex:11 | this project pipeline output (output/logs/3_Crime_Data_Analysis_I.log, panel range line) | 2016-01-01 to 2024-12-31 | 2016–2024 | VERIFIED | 2026-05-13 |  |
-| 10 officially designated villas in CABA | paper/sections/03_data.tex:25 | CABA Decreto 358/2017 (formal villa registry) | 10 villas + 1 NHT | "10 villas" | DRIFT | 2026-05-13 | User notes: decree lists 10 villas + 1 Núcleo Habitacional Transitorio; add hedge "ten villas plus one transitional housing site". |
-| ~50 validated raid events 2016–2024 | paper/sections/03_data.tex:62 | this project scraping pipeline (<pipeline-output-path>/final_raid_panel.csv, row count) | 51 rows | "approximately fifty" | VERIFIED | 2026-05-13 |  |
-| 7 of 10 villas experienced ≥1 raid 2016–2024 | paper/sections/03_data.tex:64 | this project pipeline output (output/tables/villa_raid_summary.csv, treated villa count) | 7 villas | 7 villas | VERIFIED | 2026-05-13 |  |
+| Sample period 2016–2024 | paper/sections/03_data.tex:11 | this project pipeline output (output/logs/3_Data_Analysis_I.log, panel range line) | 2016-01-01 to 2024-12-31 | 2016–2024 | VERIFIED | 2026-05-13 |  |
+| 10 officially designated treated areas in the study city | paper/sections/03_data.tex:25 | City Decree NN/YYYY (formal treated-area registry) | 10 areas + 1 transitional site | "10 areas" | DRIFT | 2026-05-13 | User notes: decree lists 10 areas + 1 transitional housing site; add hedge "ten areas plus one transitional housing site". |
+| ~50 validated intervention events 2016–2024 | paper/sections/03_data.tex:62 | this project scraping pipeline (<pipeline-output-path>/final_event_panel.csv, row count) | 51 rows | "approximately fifty" | VERIFIED | 2026-05-13 |  |
+| 7 of 10 treated areas experienced ≥1 event 2016–2024 | paper/sections/03_data.tex:64 | this project pipeline output (output/tables/unit_event_summary.csv, treated unit count) | 7 units | 7 units | VERIFIED | 2026-05-13 |  |
 | Event window: 30 days pre, 60 days post | paper/sections/03_methodology.tex:18 | analysis/8_Event_Study_Stacked.do header (lines 12–18) | [-30, +60] | "30 days pre, 60 days post" | VERIFIED | 2026-05-13 |  |
 | First stage F-stat: 18.4 | paper/sections/04_results.tex:88 | this project pipeline output (output/logs/4_Analysis_Standard_DiD_Daily.log, first-stage block) | 14.7 | 18.4 | STALE | 2026-05-13 | User: paper was written before the 2026-04 re-run with the new clustering; needs update. |
 ```
@@ -125,7 +125,7 @@ below — emphasize this project's pipeline outputs:
    STALE row stays until the prose is updated or the user records an
    override.
 5. **Cross-document numbers must agree.** If `paper/.fact-audit.md`
-   says "51 raid episodes" and `presentation/.fact-audit.md` says
+   says "51 event episodes" and `presentation/.fact-audit.md` says
    "approximately fifty", that's fine (rounding); but "51" vs "47"
    is a DRIFT that must be reconciled across documents (use
    `/cross-doc-audit` to find them).

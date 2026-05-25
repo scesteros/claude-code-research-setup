@@ -29,16 +29,16 @@ Generate 5-7 challenges from these categories:
 > "What if the parallel trends assumption fails because of X?"
 
 ### 2. Treatment Variable Challenges
-> "Could media reporting bias systematically affect which raids we observe?"
+> "Could media reporting bias systematically affect which events we observe?"
 
 ### 3. Alternative Explanation Challenges
-> "Could this result be driven by Y rather than the raid itself?"
+> "Could this result be driven by Y rather than the intervention itself?"
 
 ### 4. Data Quality Challenges
-> "Is there a structural break in crime reporting during this period?"
+> "Is there a structural break in outcome reporting during this period?"
 
 ### 5. External Validity Challenges
-> "Do these results generalize beyond Buenos Aires informal settlements?"
+> "Do these results generalize beyond the study setting?"
 
 ### 6. Specification Challenges
 > "What happens if we change the event window / geographic unit / crime category?"

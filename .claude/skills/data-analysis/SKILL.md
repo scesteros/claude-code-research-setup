@@ -9,7 +9,7 @@ allowed-tools: ["Read", "Grep", "Glob", "Write", "Edit", "Bash"]
 
 Design and implement an end-to-end data analysis in Stata (primary) or Python (supporting).
 
-**Input:** `$ARGUMENTS` — an analysis goal (e.g., "estimate effect of raids on robbery at weekly frequency") or a dataset description.
+**Input:** `$ARGUMENTS` — an analysis goal (e.g., "estimate effect of the intervention on outcome Y at weekly frequency") or a dataset description.
 
 ---
 
@@ -29,7 +29,7 @@ Design and implement an end-to-end data analysis in Stata (primary) or Python (s
 
 1. Read `$ARGUMENTS` and understand what analysis is requested
 2. Check existing .do files in `analysis/` for related specifications
-3. Read `0_CABA_Master.do` for global definitions and pipeline structure
+3. Read `0_Master.do` for global definitions and pipeline structure
 4. Identify which data files are needed and whether they exist
 
 ### Phase 2: Design the Specification
@@ -55,7 +55,7 @@ Treatment variable:      [name + definition + timing]
 Sample:                  [units, time period, restrictions]
 Estimating equation:     [in math notation, e.g.,
                          y_{it} = α_i + γ_t + β · D_{it} + ε_{it}]
-Fixed effects:           [unit + time, or barrio×month, etc.]
+Fixed effects:           [unit + time, or unit×month, etc.]
 Standard errors:         [clustering level + rationale]
 Identification:          [parallel trends / exogenous timing /
                          IV exclusion / discontinuity]

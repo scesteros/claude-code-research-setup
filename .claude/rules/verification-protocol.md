@@ -13,7 +13,7 @@ Tras editar `.do` / `.py` / `.tex` o producir un output de análisis, verificar 
 
 Since Claude edits but does not run Stata:
 1. Review the .do file for syntax errors (missing semicolons, unmatched quotes, wrong variable names)
-2. Check that all referenced globals exist in `0_CABA_Master.do`
+2. Check that all referenced globals exist in `0_Master.do`
 3. Verify file paths use globals, not hardcoded paths
 4. Check merge logic: correct `using` files, appropriate merge type (1:1, m:1, 1:m)
 5. Verify output paths exist and are correct (`$output/figures/`, `$output/tables/`, etc.)

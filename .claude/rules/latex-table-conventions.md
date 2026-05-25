@@ -55,7 +55,7 @@
 |---|---|
 | `analysis/9_Exploratory_Tables.do` | Compliant (updated 2026-04-22) |
 | `analysis/9_Exploratory_Graphs_Clean.do` (G5 summary block) | Compliant (updated 2026-04-22) |
-| `analysis/13_Descriptive_Villas_vs_Barrios.do` | Compliant (updated 2026-04-22) |
+| `analysis/13_Descriptive_Treated_vs_Control.do` | Compliant (updated 2026-04-22) |
 | `analysis/12_Descriptive_Cross_Section_Response.do` | **Pending** -- still emits `threeparttable` + booktabs |
 | `analysis/12_Descriptive_Crime_Type_Decomposition.do` | **Pending** |
 | `analysis/12_Descriptive_Sanity_Checks.do` | **Pending** |

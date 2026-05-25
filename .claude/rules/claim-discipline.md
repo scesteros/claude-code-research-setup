@@ -29,7 +29,7 @@ Never invent:
 - Citations (author, year, title, outlet, page references).
 - Empirical findings or magnitudes attributed to a cited paper.
 - Gaps in the literature ("no study has examined X").
-- Institutional facts (CABA agency jurisdictions, formal villa
+- Institutional facts (agency jurisdictions, formal treated-area
   designation criteria, statute provisions, regulatory frameworks,
   partnership terms for any FOIA-type information request).
 - Sample sizes, dates, or numerical claims about the pipeline output.
@@ -70,7 +70,7 @@ table caption → meeting note):
   the discrepancy before resolving it.
 - For numbers with multiple plausible referents (e.g., main DiD vs.
   stacked DiD vs. event-study coefficient at horizon 0; full sample vs.
-  restricted to villas with ≥1 raid), be explicit about which one is
+  restricted to units with ≥1 event), be explicit about which one is
   being used and where it comes from.
 
 ### 4. Follow stated conventions over existing prose
@@ -104,11 +104,11 @@ verified, prefer the right column:
 
 | Strong (avoid unless verified) | Hedged (default) |
 |---|---|
-| "No study has examined raid effects on homicide in CABA villas." | "To the best of our knowledge, raid effects on homicide in CABA villas have not been examined." |
-| "This is the first causal study of police raids in informal settlements." | "While existing causal evidence on police raids in informal settlements remains limited, this paper provides…" |
-| "The literature on narco crackdowns in Argentina is non-existent." | "We are not aware of recent causal evidence on narco crackdowns in Argentina." |
+| "No study has examined intervention effects on the outcome in treated units." | "To the best of our knowledge, intervention effects on the outcome in treated units have not been examined." |
+| "This is the first causal study of the intervention in treated neighborhoods." | "While existing causal evidence on the intervention in treated neighborhoods remains limited, this paper provides…" |
+| "The literature on enforcement crackdowns in the country is non-existent." | "We are not aware of recent causal evidence on enforcement crackdowns in the country." |
 | "The supply-disruption channel is undocumented in our setting." | "We have not identified prior work documenting the supply-disruption channel in our setting." |
-| "Buenos Aires is the sharpest case of urban informal-settlement crime in the region." | "Buenos Aires exhibits a pronounced concentration of crime in informal settlements" (drop the comparative unless ranked). |
+| "The study city is the sharpest case of the phenomenon in the region." | "The study city exhibits a pronounced concentration of the phenomenon" (drop the comparative unless ranked). |
 
 ---
 
@@ -142,12 +142,12 @@ single pass that suffices for ordinary cites.
 Run a structured search scoped to the specific claim, in this order:
 
 1. **OpenAlex MCP** — broad subject + geography filter (e.g.,
-   "policing crime informal settlements Latin America 2010–2024").
+   "policing crime treated neighborhoods region 2010–2024").
 2. **paper-search-mcp** — multi-source (arXiv, Semantic Scholar,
    Crossref, RePEc, PubMed, others).
 3. **Serper MCP** (`google_search_scholar`) for policy reports,
    dissertations, citation-count signals — especially for grey
-   literature on Argentine policing.
+   literature on country-specific policing.
 4. **Manual targeted search by candidate keyword combinations**
    (population × outcome × identification strategy × geography).
 
@@ -178,15 +178,15 @@ instructed to "find a paper that would falsify this novelty claim".
 
 Examples of statements that trigger the two-pass protocol:
 
-- "No published causal study estimates the effect of police raids on
-  homicides in Buenos Aires villas."
-- "This is the first paper to use staggered DiD on narco-raid events
-  in Latin American informal settlements."
-- "The literature on Argentine drug enforcement is non-existent /
+- "No published causal study estimates the effect of the intervention on
+  the outcome in the study city's treated units."
+- "This is the first paper to use staggered DiD on intervention events
+  in treated neighborhoods of the region."
+- "The literature on enforcement in the country is non-existent /
   thin / virtually absent."
-- "We are not aware of recent quasi-experimental evaluations of CABA
-  police operations."
-- "Buenos Aires is the sharpest case of [phenomenon]."
+- "We are not aware of recent quasi-experimental evaluations of the
+  partner agency's operations."
+- "The study city is the sharpest case of [phenomenon]."
 
 Hedging vocabulary (already in §2 above) is necessary but not
 sufficient: hedging plus exhaustive search is the bullet-proof
@@ -238,14 +238,13 @@ deliberate, not accidental.
 When a cluster genuinely mixes types — one empirical anchor + two
 conceptual/foundational references — say so in prose:
 
-> Empirically, crackdown-induced violence has been documented in
-> Mexican municipalities \citep{dell2015trafficking}. The broader
-> theoretical framework for systemic drug-market violence is
-> articulated in \citet{goldstein1985tripartite} and
-> \citet{lessing2021conceptualizing}.
+> Empirically, the effect has been documented in setting A
+> \citep{smith2020intervention}. The broader theoretical framework
+> is articulated in \citet{brown2010framework} and
+> \citet{jones2015theory}.
 
-This is cleaner than `\citep{dell2015trafficking, goldstein1985tripartite,
-lessing2021conceptualizing}` because the reader can see which paper
+This is cleaner than `\citep{smith2020intervention, brown2010framework,
+jones2015theory}` because the reader can see which paper
 carries the empirical weight and which carries the conceptual
 scaffolding. The `.citation-audit.md` log mirrors this distinction in
 its `claim_fingerprint` column.

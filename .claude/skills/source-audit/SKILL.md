@@ -25,8 +25,8 @@ The "source" passed to this skill can be any of:
 - **A CSV produced by the pipeline** under `output/tables/` (e.g., `main_did_daily.csv`, `event_study_stacked.csv`).
 - **A `.do` file header or inline comment** that documents a sample restriction, treatment definition, or variable construction (use this when the prose asserts how a variable is built).
 - **A working paper PDF** under `literature/methods/` or `literature/topic/`.
-- **An information-request response** under `solicitudes_información/`.
-- **A CABA government source document** (statute, decree, official codebook) for institutional facts about villas, comunas, or police jurisdictions.
+- **An information-request response** under `information_requests/`.
+- **A government source document** (statute, decree, official codebook) for institutional facts about treated areas, districts, or police jurisdictions.
 - **A figure file** under `output/figures/` — for prose that describes what the figure shows (e.g., "the event-study plot shows no pre-trend").
 
 If the source is a `.log` or `.csv`, treat it as a primary source. The Stata pipeline output is the authoritative value for any number the paper draft asserts about the analysis.
@@ -46,7 +46,7 @@ If the source is not provided, ask before proceeding.
 Read the target and list each substantive claim that should be source-grounded. A substantive claim is one of:
 
 - A specific number, sample size, magnitude, date, percentage, point estimate, standard error, or F-statistic.
-- An institutional fact (CABA agency jurisdictions, formal villa designation criteria, FARC/PRO trafficking-route boundaries, regulatory frameworks).
+- An institutional fact (agency jurisdictions, formal treated-area designation criteria, regulatory frameworks).
 - An attribution ("the WP shows that…", "the regression in `4_Analysis_Standard_DiD_Daily.do` finds…").
 - A characterization of a study's design, sample, outcome, or specification.
 - A direct paraphrase of a passage from the source.
@@ -66,7 +66,7 @@ For Stata `.log` files, search for: the model header (`reghdfe`, `xtreg`, `csdid
 Compare each prose claim against its source passage on:
 
 - **Number / magnitude:** do the digits match? Are units the same? Is the value at the same level of aggregation? (Coefficient in logs vs. percent change is a common drift.)
-- **Population / setting:** same sample, same time period, same unit of observation? (Daily vs. monthly panel; barrios vs. comunas; pre-2018 vs. full window.)
+- **Population / setting:** same sample, same time period, same unit of observation? (Daily vs. monthly panel; neighborhoods vs. districts; pre-policy-change vs. full window.)
 - **Direction / sign:** prose says "decrease", source says "decrease"?
 - **Precision:** does the prose add quantifiers, comparators, or specificity not in the source ("sharpest", "first", "only", "primary", "robust to all specifications")?
 - **Attribution:** is the claim attributed to the source, or stated as the writer's own finding?

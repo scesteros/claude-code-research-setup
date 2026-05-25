@@ -15,7 +15,7 @@ Produce a thorough, actionable code review report. You do NOT edit files — you
 
 1. **Read the target .do file(s)** end-to-end
 2. **Read `.claude/rules/stata-code-conventions.md`** for project standards
-3. **Check `0_CABA_Master.do`** for global definitions and pipeline context
+3. **Check `0_Master.do`** for global definitions and pipeline context
 4. **Check every category below** systematically
 5. **Produce the report**
 

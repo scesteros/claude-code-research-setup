@@ -20,7 +20,7 @@ In this project the common pairings are:
 
 1. **Claim cluster** — two or more verbatim claims, each tagged with its source document and location (`file:line`).
 2. **Dimension focus** (optional) — which dimension(s) the orchestrator wants checked (numerical, terminology, framing, structural, attribution, asymmetric inclusion).
-3. **Context hints** (optional) — what kind of facts the cluster is about (e.g., "main DiD coefficient for daily homicides", "treatment definition: ≥1 raid event-window").
+3. **Context hints** (optional) — what kind of facts the cluster is about (e.g., "main DiD coefficient for daily outcome", "treatment definition: ≥1 intervention event-window").
 
 If any are missing or ambiguous, ask the orchestrator before proceeding.
 
@@ -35,7 +35,7 @@ Use Read with offset/limit to retrieve the relevant lines from each document. Re
 Check each dimension explicitly:
 
 - **Numerical match:** do the numbers agree? Units? Precision? (Paper says "-0.118"; slide says "-11.8%"; CSV cell says "-0.1184". Same value, different precision and units — flag if rounding is unstated.)
-- **Terminology match:** same concept referred to by the same term? (Paper says "treated villas"; slide says "raided settlements"; flag the drift.)
+- **Terminology match:** same concept referred to by the same term? (Paper says "treated units"; slide says "intervention sites"; flag the drift.)
 - **Framing scope:** do the claims operate at the same level of aggregation, time window, or sub-population? (Paper claim is daily; caption is monthly.)
 - **Structural match:** if the claims describe a design feature (event window, treatment definition, clustering level, control group), are the descriptions consistent?
 - **Attribution match:** are the same actors named (co-authors, organizations) consistently?
@@ -47,7 +47,7 @@ Check each dimension explicitly:
 - **NUMERICAL_MISMATCH** — same fact, different numbers or precision.
 - **TERMINOLOGY_DRIFT** — same concept, inconsistent terminology.
 - **FRAMING_DIVERGENCE** — same fact, different scope, time, or precision; may be intentional but worth flagging.
-- **STRUCTURAL_CONFLICT** — same design feature described differently across documents. (Paper says clustering at barrio level; slide says clustering at comuna level.)
+- **STRUCTURAL_CONFLICT** — same design feature described differently across documents. (Paper says clustering at neighborhood level; slide says clustering at district level.)
 - **MISSING_FROM_DOC** — a substantive fact in one document is missing from the parallel section of another.
 
 If multiple dimensions diverge, choose the most severe verdict and note the others.

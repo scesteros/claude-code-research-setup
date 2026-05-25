@@ -14,7 +14,7 @@ paths:
 
 - [ ] Treatment events sourced from verified scraping output (`<pipeline-output-path>/`)
 - [ ] Events deduplicated (check for same event reported by multiple sources)
-- [ ] Geographic matching documented (how raids are assigned to spatial units)
+- [ ] Geographic matching documented (how events are assigned to spatial units)
 - [ ] Treatment timing is precise (date, not just month/year)
 - [ ] Treatment intensity or type is captured if relevant
 
@@ -58,7 +58,7 @@ paths:
 
 | Pitfall | Impact | Prevention |
 |---------|--------|------------|
-| Multiple raids in same area | Contaminated control group | Restrict to first raid or use stacked design |
+| Multiple events in same area | Contaminated control group | Restrict to first event or use stacked design |
 | Spillover to adjacent areas | Biased treatment effects | Test with spatial buffers |
 | Seasonal crime patterns | Confound treatment effects | Include time fixed effects, test with placebo dates |
 | Media reporting bias | Selective treatment measurement | Cross-validate with official sources |

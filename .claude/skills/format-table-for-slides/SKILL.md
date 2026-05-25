@@ -26,7 +26,7 @@ Step 3: **Create slide version**
 - Apply these transformations:
   - Max 5 columns (select most important specifications)
   - Max 8 visible rows (group controls under "Controls: Yes/No")
-  - Shortened labels (e.g., "Narco Raid (t-1)" not "Lagged Treatment Variable: Police Raid in Period t-1")
+  - Shortened labels (e.g., "Treatment (t-1)" not "Lagged Treatment Variable: Intervention in Period t-1")
   - Use `booktabs` (`\toprule`, `\midrule`, `\bottomrule`)
   - Add `\footnotesize` or `\scriptsize` if needed
   - Keep significance stars and standard errors

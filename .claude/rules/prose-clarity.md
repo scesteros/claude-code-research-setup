@@ -38,7 +38,7 @@ Apply these to every prose paragraph. If any answer is "no", revise.
 
 3. **Are the key nouns and terms understandable from this paragraph
    alone?**
-   No undefined acronyms (CABA, PFA, SEDRONAR, DiD, RDD, IV, SCM
+   No undefined acronyms (project-specific agency names, DiD, RDD, IV, SCM
    require first-mention expansion or a clear earlier definition),
    no concepts introduced in earlier sections without a one-clause
    reminder, no antecedents like "this approach" without an explicit
@@ -62,8 +62,8 @@ Apply these to every prose paragraph. If any answer is "no", revise.
 - **Active voice, first-person plural** in own work; passive only
   when the agent is genuinely irrelevant.
 - **Hedge to match design strength.** Causal verbs require causal
-  designs. The staggered-DiD spec justifies "raids reduce homicides";
-  a simple cross-villa correlation justifies only "is associated
+  designs. The staggered-DiD spec justifies "the intervention reduces the outcome";
+  a simple cross-unit correlation justifies only "is associated
   with".
 
 ---
@@ -86,7 +86,7 @@ In every case the topic sentence carries the claim and the body
 defends it with one piece of evidence per sentence. The most common
 failure in econ paragraphs is a topic sentence that *describes* the
 section instead of stating a claim — "We now turn to the results"
-instead of "Police raids reduce daily homicides by 11.8%". Avoid the
+instead of "The intervention reduces the daily outcome by 11.8%". Avoid the
 former.
 
 ---

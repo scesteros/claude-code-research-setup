@@ -86,7 +86,7 @@ Stata `.tex` tables in `output/tables/` are formatted for paper width. For slide
   \centering
   \includegraphics[width=0.95\textwidth]{event_study_total_weekly.png}
   \vspace{-0.5em}
-  {\footnotesize Source: CABA Crime Data, 2016--2023}
+  {\footnotesize Source: City Crime Data, 2016--2023}
 \end{frame}
 ```
 

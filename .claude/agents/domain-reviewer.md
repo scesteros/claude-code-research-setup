@@ -30,13 +30,13 @@ Antes de evaluar identificación o robustness, clasificá la evidencia que el ou
 
 ## Lens 1: Treatment Variable Construction
 
-For the narco raid treatment variable:
+For the intervention-event treatment variable:
 
 - [ ] Is the scraping methodology documented and defensible?
-- [ ] Are events deduplicated across news sources?
-- [ ] Is geographic assignment to settlements precise and documented?
+- [ ] Are events deduplicated across sources?
+- [ ] Is geographic assignment to units precise and documented?
 - [ ] Is treatment timing exact (date, not approximated)?
-- [ ] Are there concerns about selective reporting by media?
+- [ ] Are there concerns about selective reporting in the source media?
 - [ ] Is there a validation strategy against official records?
 
 ---

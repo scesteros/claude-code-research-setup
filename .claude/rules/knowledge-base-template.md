@@ -11,13 +11,13 @@ When the project accumulates domain-specific knowledge (variable definitions, da
 
 | Variable | Definition | Source | Notes |
 |----------|-----------|--------|-------|
-| `crime_count` | Total reported crimes per unit-period | CABA Open Data | Excludes contraventions |
+| `crime_count` | Total reported crimes per unit-period | City Open Data | Excludes contraventions |
 
 ## Data Sources
 
 | Source | Coverage | Frequency | Access |
 |--------|----------|-----------|--------|
-| CABA Mapa del Delito | 2016-present | Daily | Open data portal |
+| City Crime Map | 2016-present | Daily | Open data portal |
 
 ## Institutional Context
 
