@@ -1,8 +1,8 @@
 # claude-code-research-setup
 
-A working [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) configuration for empirical economics research — agents, skills, hooks, and rules used in production on an active PhD project.
+A working [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) configuration for empirical economics research — the agents, skills, hooks, and rules I use every day.
 
-This is the lightly-genericized, ready-to-fork version of the setup running in [`narcos-ba`](https://github.com/scesteros) (a study of anti-narcotics police raids and crime in Buenos Aires informal settlements). Drop it into your own repo, adapt the placeholders, and you have an opinionated starting point — instead of a blank `.claude/` directory.
+This is the lightly-genericized, ready-to-fork version of the setup I run across my active research projects. The most-developed working example is [`narcos-ba`](https://github.com/scesteros) — a study of anti-narcotics police raids and crime in Buenos Aires informal settlements — so most of the concrete examples below are drawn from it. Drop the `.claude/` directory into your own repo, adapt the placeholders, and you have an opinionated starting point — instead of a blank `.claude/` slate.
 
 > **Use as a template:** click **"Use this template"** above to spin up your own copy without forking. Adapt to your project (paths, conventions, examples) and commit forward.
 
@@ -160,7 +160,7 @@ The setup is opinionated in a few ways worth flagging upfront:
 
 ## About the examples
 
-Many rules, skills, and agents contain concrete illustrative examples drawn from the upstream project — a study of anti-narcotics police raids and crime in informal settlements (*villas*) in Buenos Aires, using event-study DiD on a scraped panel of raid events. You will see references to *villas*, *raids*, *CABA agencies*, *staggered DiD*, etc.
+Many rules, skills, and agents contain concrete illustrative examples drawn from the running example project — a study of anti-narcotics police raids and crime in informal settlements (*villas*) in Buenos Aires, using event-study DiD on a scraped panel of raid events. You will see references to *villas*, *raids*, *CABA agencies*, *staggered DiD*, etc.
 
 These are intentionally preserved as templates rather than rewritten into sterile placeholders. They show what good rules, fact-audit logs, and review prompts look like applied to a real research project — concrete enough to learn from. Adapt them to your own context: replace the substantive examples with your own treatments, units, and institutional setting.
 
@@ -186,7 +186,7 @@ Built and maintained by [Santiago Rodrigo Cesteros](https://scesteros.github.io)
 
 ### Starting points
 
-This setup did not start from scratch. Two earlier public setups by economists in the community served as the initial scaffolding, before being adapted, extended, and pushed in different directions for the upstream project:
+This setup did not start from scratch. Two earlier public setups by economists in the community served as the initial scaffolding, before being adapted, extended, and pushed in different directions to fit my own research workflow:
 
 - **[Chris Blattman](https://claudeblattman.com/)** — whose public Claude Code setup was a major reference for how to structure a research-oriented `.claude/` directory. The `tool-limitations` rule here is adapted from [chrisblattman/claudeblattman](https://github.com/chrisblattman/claudeblattman) (MIT).
 - **[Pedro H. C. Sant'Anna](https://psantanna.com/claude-code-my-workflow/workflow-guide.html)** — whose workflow guide shaped the plan-first / verify-after conventions and the framing of the overall loop.
